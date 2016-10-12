@@ -64,7 +64,7 @@ class PostsForm extends Component {
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
              <div className="input-field col s12">
-                 <textarea id="content" className="validatev materialize-textarea" {...content} />
+                 <textarea id="content" className="validate materialize-textarea" {...content} />
                  <label for="content" className="input-field col s12">Content*</label>
                  <div className="help-block">
                    {content.touched ? content.error : ''}
