@@ -9,19 +9,19 @@ export default class ProfileCard extends Component {
         <ul className="collection">
             <li className="collection-item avatar">
                 <i className="material-icons prefix">person</i>
-                <span className="title">Name:</span>
+                <span className="title"> Name:</span>
                 <p>{user && user.name}</p>
                 <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a>
             </li>
             <li className="collection-item avatar">
                 <i className="material-icons prefix">portrait</i>
-                <span className="title">Username:</span>
+                <span className="title"> Username:</span>
                 <p>{user && user.username}</p>
                 <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a>
             </li>
             <li className="collection-item avatar">
                 <i className="material-icons prefix">email</i>
-                <span className="title">Email:</span>
+                <span className="title"> Email:</span>
                 <p>{user && user.email}</p>
                 <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a>
             </li>

@@ -11,13 +11,13 @@ class Profile extends Component {
         <div className="container">
         	<h2>Profile</h2>
 
-        	<div className='well'>
+        	<div className=''>
         		<ProfileCardContainer />
         	</div>
-        	<div className='well'>
+        	<div className=''>
         		<UpdateEmailFormContainer />
         	</div>
-        	
+
         </div>
       </div>
     );
