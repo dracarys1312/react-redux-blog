@@ -27,13 +27,13 @@ class Header extends Component {
     if(authenticatedUser) {
       return (
         <ul className="nav  nav-pills navbar-right">
-            <li role="presentation">
-              <Link role="presentation" to="/profile">
+            <li style={{paddingRight: '10px'}} role="presentation">
+              <Link role="presentation" style={{color:'#996633',  fontSize: '17px'}} to="/profile">
               {authenticatedUser.name}
               </Link>
             </li>
-            <li role="presentation">
-              <a onClick={this.props.logout} href="javascript:void(0)">
+            <li style={{paddingRight: '10px'}} role="presentation">
+              <a style={{color:'#996633',  fontSize: '17px'}}  onClick={this.props.logout} href="javascript:void(0)">
               Log out
               </a>
             </li>
@@ -43,13 +43,13 @@ class Header extends Component {
 
     return (
       <ul className="nav  nav-pills navbar-right">
-          <li role="presentation">
-            <Link  role="presentation" to="/signup">
+          <li style={{paddingRight: '10px'}} role="presentation">
+            <Link  role="presentation" style={{color:'#996633',  fontSize: '17px'}} to="/signup">
             Sign up
             </Link>
           </li>
-          <li role="presentation">
-            <Link to="/signin">
+          <li style={{paddingRight: '10px'}} role="presentation">
+            <Link style={{color:'#996633',  fontSize: '17px'}} to="/signin">
             Sign in
             </Link>
           </li>
@@ -63,8 +63,8 @@ class Header extends Component {
        return (
         <div className="container">
           <ul className="nav  nav-pills navbar-right">
-      			<li role="presentation">
-      				<Link o="/posts/new">
+      			<li style={{paddingRight: '10px'}} role="presentation">
+      				<Link style={{color:'#337ab7',  fontSize: '17px'}} to="/posts/new">
       				New Post
     					</Link>
             </li>
@@ -78,8 +78,8 @@ class Header extends Component {
         <div className="container">
           {this.renderSignInLinks(authenticatedUser)}
           <ul className="nav  nav-pills navbar-left">
-      			<li role="presentation">
-      				<Link className="text-xs-right" to="/">Back To Index</Link>
+      			<li style={{paddingRight: '10px'}} role="presentation">
+      				<Link className="text-xs-right"  style={{color:'#337ab7',  fontSize: '17px'}}  to="/">Back To Index</Link>
       			</li>
     			</ul>
         </div>
@@ -88,7 +88,7 @@ class Header extends Component {
   			return (
   			 <div className="container">
     			<ul className="nav  nav-pills navbar-left">
-      			<li style={{paddingRight: '10px'}} role="presentation"><Link to="/">Back To Index</Link></li>
+      			<li style={{paddingRight: '10px'}} style={{color:'#337ab7',  fontSize: '17px'}}  role="presentation"><Link to="/">Back To Index</Link></li>
     			</ul>
 
     			<div className="navbar-form navbar-right" style={{paddingRight: '50px'}}>
@@ -100,22 +100,15 @@ class Header extends Component {
   	}
 	};
 
-    render() {
-        return (
-            <nav className="nav-wrapper">
-                <a href="#!" className="brand-logo">Happy Today</a>
-                <a href="#" data-activates="mobile-demo" className="button-collapse">
-                    <i className="material-icons">menu</i>
-                </a>
-                <ul className="right hide-on-med-and-down">
-                    {this.renderLinks()}
-                </ul>
-                <ul className="side-nav" id="mobile-demo">
-                    {this.renderLinks()}
-                </ul>
-            </nav>
-        );
-    }
+	render() {
+			return (
+			 <nav className="navbar navbar-default navbar-static-top">
+			      <div id="navbar" className="navbar-collapse collapse">
+			      {this.renderLinks()}
+	      		</div>
+			 </nav>
+			);
+	}
 }
 
 export default Header
