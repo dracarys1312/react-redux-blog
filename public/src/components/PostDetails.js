@@ -30,12 +30,12 @@ class PostDetails extends Component {
     return (
       <div className="container">
         <h3>{post.title}</h3>
-	<div className="chip">
-	   {post.categories}
-	</div>
+    	<div className="chip">
+    	   {post.categories}
+    	</div>
         <p style={{
           marginTop: '25px'
-      }}>{post.content}</p>
+        }}>{post.content}</p>
       </div>
     );
   }

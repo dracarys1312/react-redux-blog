@@ -6,6 +6,10 @@ class PostsList extends Component {
     this.props.fetchPosts();
   }
 
+  componentDidMount() {
+    this.props.fetchPost(this.props.postId);
+  }
+
   renderCategories(categories) {
      return categories.map((c) => {
         c = c.trim();
@@ -16,6 +20,7 @@ class PostsList extends Component {
   }
 
   renderPosts(posts) {
+      const { post, loading, error } = this.props.activePost;
     return posts.map((post) => {
       return (
         <li className="list-group-item" key={post._id}>
