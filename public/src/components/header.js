@@ -25,7 +25,7 @@ class Header extends Component {
     renderSignInLinks(authenticatedUser) {
         if (authenticatedUser) {
             return (
-                <ul className="nav  nav-pills navbar-right">
+                <ul className="nav-pills navbar-right">
                     <li style={{
                         paddingRight: '10px'
                     }} role="presentation">
@@ -45,7 +45,7 @@ class Header extends Component {
         }
 
         return (
-            <ul className="nav  nav-pills navbar-right">
+            <ul className="nav-pills navbar-right">
                 <li style={{
                     paddingRight: '10px'
                 }} role="presentation">
@@ -69,7 +69,7 @@ class Header extends Component {
         if (type === 'posts_index') {
             return (
                 <div className="container">
-                    <ul className="nav  nav-pills navbar-right">
+                    <ul className="nav-pills navbar-right">
                         <li style={{
                             paddingRight: '10px'
                         }} role="presentation">
@@ -86,7 +86,7 @@ class Header extends Component {
             return (
                 <div className="container">
                     {this.renderSignInLinks(authenticatedUser)}
-                    <ul className="nav nav-pills navbar-left">
+                    <ul className="nav-pills navbar-left">
                         <li style={{
                             paddingRight: '10px'
                         }} role="presentation">
@@ -98,7 +98,7 @@ class Header extends Component {
         } else if (type === 'posts_show') {
             return (
                 <div className="container">
-                    <ul className="nav  nav-pills navbar-left">
+                    <ul className="nav-pills navbar-left">
                         <li style={{
                             paddingRight: '10px'
                         }} role="presentation">
