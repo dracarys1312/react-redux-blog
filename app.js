@@ -102,7 +102,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/posts');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://admin:admin@ds015934.mlab.com:15934/happytodaydb');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
