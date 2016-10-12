@@ -36,7 +36,7 @@ class PostsForm extends Component {
     return (
       <div className="container">
       {this.renderError(newPost)}
-      <form onSubmit={handleSubmit(this.props.createPost.bind(this))}>
+      <form style='margin-top:25px;' onSubmit={handleSubmit(this.props.createPost.bind(this))}>
         <div className={`form-group ${title.touched && title.invalid ? 'has-error' : ''}`}>
           <label className="control-label">Title*</label>
           <input type="text" className="form-control" {...title} />
@@ -64,54 +64,10 @@ class PostsForm extends Component {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary"  disabled={submitting} >Submit</button>
-        <Link to="/" className="btn btn-error">Cancel</Link>
+        <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
+        <Link to="/" className="waves-effect waves-light btn red darken">Cancel</Link>
       </form>
-
-
-        <br/>
-        <br/>
-        <div className="alert alert-warning">
-          NOTE: The app now has JWT Authentication turned on. <b>Please *Sign up* using some dummy data to create new posts</b>
-        </div> 
-      <br/>
-      <br/>
-      <br/>
-
-      <div className="panel panel-default">
-      <div className="panel-heading"><h3>Check out Form Validations!</h3></div>
-      <div className="panel-body">
-        <b>Learn how to implement it by going through: <a href="https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124" target="_blank">Adding A Robust Form Validation To React Redux Apps</a></b> 
-        <ol>
-         <li><h4>Client Side Validation:</h4>
-              1. Click on <b>Title</b> field and leave it empty.
-              <br/>2. Then click on another field(to trigger blur).
-              <br/> <b>Result: "Enter a Title"</b>
-              <br/>
-         </li>
-
-         <li><h4>"Instant" Server Side Validation:</h4>
-              Calls server w/ field values when a field is blurred (even before submitting the form).
-              <br/>1. Create a post
-              <br/>2. Try to create another w/ the same <b>Title</b>
-              <br/>3. Then click on Categories field (to trigger blur). 
-
-               <br/> <b>Result: You'll get error from the server saying "Title is not unique"</b>
-        </li>
-
-         <li><h4>"onSubmit" Server Side Validation:</h4>
-              This is the common scenario where the server throws some error when user clicks on submit button.
-              <br/>1. Enter <b>test</b> in all the above fields . 
-              <br/>2. Press the Submit button. 
-              <br/> <b>Result: Errors below every field</b>
-               <br/><i>Note: The server is hardcoded to return this error for demo purposes</i>
-        </li>        
-        </ol>
-        </div>
       </div>
-
-      </div>
-
     );
   }
 }

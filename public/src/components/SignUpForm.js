@@ -68,22 +68,9 @@ class SignUpForm extends Component {
             {confirmPassword.touched ? confirmPassword.error : ''}
           </div>
         </div>
-        <button type="submit" className="btn btn-primary"  disabled={submitting} >Submit</button>
-        <Link to="/" className="btn btn-error">Cancel</Link>
+        <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
+        <Link to="/" className="waves-effect waves-light btn red darken">Cancel</Link>
       </form>
-
-
-      <br/>
-      <br/>
-      <br/>
-
-      <div className="panel panel-default">
-      <div className="panel-heading"><h3>Check out Form Validations!</h3></div>
-      <div className="panel-body">
-        <b>Learn how to implement it by going through: <a href="https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124" target="_blank">Adding A Robust Form Validation To React Redux Apps</a></b> 
-        </div>
-      </div>
-
       </div>
 
     );

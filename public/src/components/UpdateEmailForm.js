@@ -53,7 +53,7 @@ class UpdateEmailForm extends Component {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary"  disabled={submitting} >Update Email</button>
+        <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Update Email</button>
       </form>
     );
   }

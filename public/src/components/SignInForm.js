@@ -42,8 +42,6 @@ class SignInForm extends Component {
           {asyncValidating === 'username' ? 'validating..': ''}
           </div>
         </div>
-
-
         <div className={`form-group ${password.touched && password.invalid ? 'has-error' : ''}`}>
           <label className="control-label">Password*</label>
           <input type="password" className="form-control" {...password} />
@@ -51,27 +49,9 @@ class SignInForm extends Component {
             {password.touched ? password.error : ''}
           </div>
         </div>
-        <button type="submit" className="btn btn-primary"  disabled={submitting} >Submit</button>
-        <Link to="/" className="btn btn-error">Cancel</Link>
+        <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
+        <Link to="/" className="waves-effect waves-light btn red darken">Cancel</Link>
       </form>
-
-
-      <br/>
-      <br/>
-      <br/>
-
-      <div className="panel panel-default">
-      <div className="panel-heading"><h3>Check out Form Validations</h3></div>
-      <div className="panel-body">
-        <b>Learn how to implement it by going through: <a href="https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124" target="_blank">Adding A Robust Form Validation To React Redux Apps</a></b>
-        <br/>
-        <br/>
-        <div className="alert alert-warning">
-          NOTE: The app now has JWT Authentication turned on. <b>Please *Sign up* using some dummy data and *Sign in* to create new posts</b>
-        </div> 
-      </div>
-      </div>
-
       </div>
 
     );
