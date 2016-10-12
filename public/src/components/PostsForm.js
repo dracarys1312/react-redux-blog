@@ -41,6 +41,7 @@ class PostsForm extends Component {
       }} className="col s8" onSubmit={handleSubmit(this.props.createPost.bind(this))}>
         <div className={`row ${title.touched && title.invalid ? 'has-error' : ''}`}>
           <div className="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
               <input type="text" id="title" className="validate" {...title} />
               <label for="title" className="control-label">Title*</label>
               <div className="help-block">
@@ -54,6 +55,7 @@ class PostsForm extends Component {
 
         <div className={`row ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
           <div className="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
               <input type="text" id="categories" className="validate" {...categories} />
               <label for="categories" className="control-label">Categories*</label>
                   <div className="help-block">
@@ -64,6 +66,7 @@ class PostsForm extends Component {
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
              <div className="input-field col s12">
+                 <i class="material-icons prefix">mode_edit</i>
                  <textarea id="textarea1" className="materialize-textarea" {...content} />
                  <label for="textarea1" className="control-label">Content*</label>
                  <div className="help-block">
