@@ -100,14 +100,14 @@ class Header extends Component {
                 <div className="container">
                     <ul className="nav-pills navbar-left">
                         <li style={{
-                            paddingRight: '10px'
+                            paddingLeft: '50px'
                         }} role="presentation">
                             <Link to="/">Back To Index</Link>
                         </li>
                     </ul>
 
-                    <div className="navbar-form navbar-right" style={{
-                        paddingLeft: '50px'
+                    <div className="navbar-right" style={{
+                        paddingLeft: '10px'
                     }}>
                         <button className="waves-effect waves-light btn blue darken" onClick={() => {
                             this.props.onDeleteClick()
