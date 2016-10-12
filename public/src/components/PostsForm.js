@@ -36,7 +36,9 @@ class PostsForm extends Component {
     return (
       <div className="container">
       {this.renderError(newPost)}
-      <form style='margin-top:25px;' onSubmit={handleSubmit(this.props.createPost.bind(this))}>
+      <form style={{
+          marginTop: '25px'
+      }} onSubmit={handleSubmit(this.props.createPost.bind(this))}>
         <div className={`form-group ${title.touched && title.invalid ? 'has-error' : ''}`}>
           <label className="control-label">Title*</label>
           <input type="text" className="form-control" {...title} />
