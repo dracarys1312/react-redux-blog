@@ -105,14 +105,9 @@ class Header extends Component {
                             <Link to="/">Back To Index</Link>
                         </li>
                     </ul>
-
-                    <div className="navbar-form navbar-right" style={{
-                        paddingRight: '50px'
-                    }}>
-                        <button className="btn btn-warning pull-xs-right" onClick={() => {
-                            this.props.onDeleteClick()
-                        }}>Delete Post</button>
-                    </div>
+                    <button className="waves-effect waves-light btn blue darken" onClick={() => {
+                        this.props.onDeleteClick()
+                    }}>Delete Post</button>
                     {this.renderSignInLinks(authenticatedUser)}
                 </div>
             );
