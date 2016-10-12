@@ -38,7 +38,7 @@ class PostsForm extends Component {
       {this.renderError(newPost)}
       <form style={{
           marginTop: '25px'
-      }} className="col s12" onSubmit={handleSubmit(this.props.createPost.bind(this))}>
+      }} className="col s8" onSubmit={handleSubmit(this.props.createPost.bind(this))}>
         <div className={`row ${title.touched && title.invalid ? 'has-error' : ''}`}>
           <div className="input-field col s12">
               <input type="text" id="title" className="validate" {...title} />
@@ -55,21 +55,19 @@ class PostsForm extends Component {
         <div className={`row ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
           <div className="input-field col s12">
               <input type="text" id="categories" className="validate" {...categories} />
-              <label for="categories" className="input-field col s12">Categories*</label>
-              <div className="help-block">
-                {categories.touched ? categories.error : ''}
-              </div>
+              <label for="categories" className="control-label">Categories*</label>
+                  <div className="help-block">
+                    {categories.touched ? categories.error : ''}
+                  </div>
           </div>
         </div>
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
-         <div className="input-field col s12">
-              <textarea id="content" className="validate" {...content} />
+             <textarea id="content" className="validatev materialize-textarea" {...content} />
              <label for="content" className="input-field col s12">Content*</label>
              <div className="help-block">
                {content.touched ? content.error : ''}
              </div>
-         </div>
         </div>
 
         <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
