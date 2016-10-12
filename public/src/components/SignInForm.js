@@ -30,23 +30,28 @@ class SignInForm extends Component {
 
     return (
       <div className="container">
-      <form onSubmit={handleSubmit(this.props.signInUser.bind(this))}>
-
-        <div className={`form-group ${username.touched && username.invalid ? 'has-error' : ''}`}>
-          <label className="control-label">@username*</label>
-          <input  placeholder="@raja" type="text" className="form-control" {...username} />
-          <div className="help-block">
-            {username.touched ? username.error : ''}
-          </div>
-          <div className="help-block">
-          {asyncValidating === 'username' ? 'validating..': ''}
+      <form style={{marginTop:'25px'}} className="col s8" onSubmit={handleSubmit(this.props.signInUser.bind(this))}>
+        <div className={`row ${username.touched && username.invalid ? 'has-error' : ''}`}>
+          <div className="input-field col s12">
+              <i className="material-icons prefix">person</i>
+              <input  placeholder="@Pt" type="text" id="username" className="validate" {...username} />
+              <label className="control-label" for="username">@username*</label>
+              <div className="help-block">
+                {username.touched ? username.error : ''}
+              </div>
+              <div className="help-block">
+              {asyncValidating === 'username' ? 'validating..': ''}
+              </div>
           </div>
         </div>
-        <div className={`form-group ${password.touched && password.invalid ? 'has-error' : ''}`}>
-          <label className="control-label">Password*</label>
-          <input type="password" className="form-control" {...password} />
-          <div className="help-block">
-            {password.touched ? password.error : ''}
+        <div className={`row ${password.touched && password.invalid ? 'has-error' : ''}`}>
+          <div className="input-field col s12">
+              <i className="material-icons prefix">lock</i>
+              <input type="password" id="password" className="validate" {...password} />
+              <label className="control-label" for="password">Password*</label>
+              <div className="help-block">
+                {password.touched ? password.error : ''}
+              </div>
           </div>
         </div>
         <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
