@@ -16,7 +16,7 @@ class PostsShow extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className=''>
         <Header type="posts_show" postId={this.props.params.id}/>
         <PostDetailsContainer id={this.props.params.id}/>
       </div>

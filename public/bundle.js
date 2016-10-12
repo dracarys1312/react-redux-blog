@@ -28905,7 +28905,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28925,200 +28925,220 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Header = function (_Component) {
-	  _inherits(Header, _Component);
+	    _inherits(Header, _Component);
 
-	  function Header() {
-	    _classCallCheck(this, Header);
+	    function Header() {
+	        _classCallCheck(this, Header);
 
-	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-	  }
-
-	  _createClass(Header, [{
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      //Important! If your component is navigating based on some global state(from say componentWillReceiveProps)
-	      //always reset that global state back to null when you REMOUNT
-	      this.props.resetMe();
+	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
 	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      if (nextProps.deletedPost.error && nextProps.deletedPost.error.message) {
-	        //delete failure
-	        alert(nextProps.deletedPost.error.message || 'Could not delete. Please try again.');
-	      } else if (nextProps.deletedPost.post && !nextProps.deletedPost.error) {
-	        //delete success
-	        this.context.router.push('/');
-	      } else if (this.props.user.user && !nextProps.user.user) {
-	        //logout (had user(this.props.user.user) but no loger the case (!nextProps.user.user))
-	        this.context.router.push('/');
-	      }
-	    }
-	  }, {
-	    key: 'renderSignInLinks',
-	    value: function renderSignInLinks(authenticatedUser) {
-	      if (authenticatedUser) {
-	        return _react2.default.createElement(
-	          'ul',
-	          null,
-	          _react2.default.createElement(
-	            'li',
-	            { role: 'presentation' },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { role: 'presentation', to: '/profile' },
-	              authenticatedUser.name
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            { role: 'presentation' },
-	            _react2.default.createElement(
-	              'a',
-	              { onClick: this.props.logout, href: 'javascript:void(0)' },
-	              'Log out'
-	            )
-	          )
-	        );
-	      }
 
-	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'right' },
-	        _react2.default.createElement(
-	          'li',
-	          { role: 'presentation' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { role: 'presentation', to: '/signup' },
-	            'Sign up'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          { role: 'presentation' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/signin' },
-	            'Sign in'
-	          )
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'renderLinks',
-	    value: function renderLinks() {
-	      var _this2 = this;
+	    _createClass(Header, [{
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            //Important! If your component is navigating based on some global state(from say componentWillReceiveProps)
+	            //always reset that global state back to null when you REMOUNT
+	            this.props.resetMe();
+	        }
+	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            if (nextProps.deletedPost.error && nextProps.deletedPost.error.message) {
+	                //delete failure
+	                alert(nextProps.deletedPost.error.message || 'Could not delete. Please try again.');
+	            } else if (nextProps.deletedPost.post && !nextProps.deletedPost.error) {
+	                //delete success
+	                this.context.router.push('/');
+	            } else if (this.props.user.user && !nextProps.user.user) {
+	                //logout (had user(this.props.user.user) but no loger the case (!nextProps.user.user))
+	                this.context.router.push('/');
+	            }
+	        }
+	    }, {
+	        key: 'renderSignInLinks',
+	        value: function renderSignInLinks(authenticatedUser) {
+	            if (authenticatedUser) {
+	                return _react2.default.createElement(
+	                    'ul',
+	                    { className: 'nav-pills navbar-right' },
+	                    _react2.default.createElement(
+	                        'li',
+	                        { style: {
+	                                paddingRight: '10px'
+	                            }, role: 'presentation' },
+	                        _react2.default.createElement(
+	                            _reactRouter.Link,
+	                            { role: 'presentation', to: '/profile' },
+	                            authenticatedUser.name
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        { style: {
+	                                paddingRight: '10px'
+	                            }, role: 'presentation' },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: this.props.logout, href: 'javascript:void(0)' },
+	                            'Log out'
+	                        )
+	                    )
+	                );
+	            }
 
-	      var _props = this.props;
-	      var type = _props.type;
-	      var authenticatedUser = _props.authenticatedUser;
+	            return _react2.default.createElement(
+	                'ul',
+	                { className: 'nav-pills navbar-right' },
+	                _react2.default.createElement(
+	                    'li',
+	                    { style: {
+	                            paddingRight: '10px'
+	                        }, role: 'presentation' },
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { role: 'presentation', to: '/signup' },
+	                        'Sign up'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    { style: {
+	                            paddingRight: '10px'
+	                        }, role: 'presentation' },
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/signin' },
+	                        'Sign in'
+	                    )
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'renderLinks',
+	        value: function renderLinks() {
+	            var _this2 = this;
 
-	      if (type === 'posts_index') {
-	        return _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'div',
-	            { role: 'presentation' },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/posts/new' },
-	              'New Post'
-	            )
-	          ),
-	          this.renderSignInLinks(authenticatedUser)
-	        );
-	      } else if (type === 'posts_new') {
-	        return _react2.default.createElement(
-	          'div',
-	          null,
-	          this.renderSignInLinks(authenticatedUser),
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'left' },
-	            _react2.default.createElement(
-	              'li',
-	              { role: 'presentation' },
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { className: 'text-xs-right', to: '/' },
-	                'Back To Index'
-	              )
-	            )
-	          )
-	        );
-	      } else if (type === 'posts_show') {
-	        return _react2.default.createElement(
-	          'div',
-	          { className: 'container' },
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'left' },
-	            _react2.default.createElement(
-	              'li',
-	              { style: { paddingRight: '10px' }, role: 'presentation' },
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
-	                'Back To Index'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'right', style: { paddingRight: '50px' } },
-	            _react2.default.createElement(
-	              'button',
-	              { className: 'waves-effect waves-light btn red pull-xs-right', onClick: function onClick() {
-	                  _this2.props.onDeleteClick();
-	                } },
-	              'Delete Post'
-	            )
-	          ),
-	          this.renderSignInLinks(authenticatedUser)
-	        );
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'nav',
-	        { className: 'nav-wrapper' },
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#!', className: 'brand-logo' },
-	          'Happy Today'
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'menu'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'right hide-on-med-and-down' },
-	          this.renderLinks()
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'side-nav', id: 'mobile-demo' },
-	          this.renderLinks()
-	        )
-	      );
-	    }
-	  }]);
+	            var _props = this.props;
+	            var type = _props.type;
+	            var authenticatedUser = _props.authenticatedUser;
 
-	  return Header;
+	            if (type === 'posts_index') {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'nav-pills navbar-right' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { style: {
+	                                    paddingRight: '10px'
+	                                }, role: 'presentation' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/posts/new' },
+	                                'New Post'
+	                            )
+	                        )
+	                    ),
+	                    this.renderSignInLinks(authenticatedUser)
+	                );
+	            } else if (type === 'posts_new') {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    this.renderSignInLinks(authenticatedUser),
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'nav-pills navbar-left' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { style: {
+	                                    paddingRight: '10px'
+	                                }, role: 'presentation' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { className: 'text-xs-right', to: '/' },
+	                                'Back To Index'
+	                            )
+	                        )
+	                    )
+	                );
+	            } else if (type === 'posts_show') {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'nav-pills navbar-left' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { style: {
+	                                    paddingLeft: '50px'
+	                                }, role: 'presentation' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/' },
+	                                'Back To Index'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'navbar-right', style: {
+	                                paddingLeft: '10px'
+	                            } },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'waves-effect waves-light btn blue darken', onClick: function onClick() {
+	                                    _this2.props.onDeleteClick();
+	                                } },
+	                            'Delete Post'
+	                        )
+	                    ),
+	                    this.renderSignInLinks(authenticatedUser)
+	                );
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'nav',
+	                { className: 'navbar nav-wrapper navbar-static-top' },
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#!', className: 'brand-logo' },
+	                    'Happy Today'
+	                ),
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'material-icons' },
+	                        'menu'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'hide-on-med-and-down' },
+	                    this.renderLinks()
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'side-nav', id: 'mobile-demo' },
+	                    this.renderLinks()
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Header;
 	}(_react.Component);
 
 	Header.contextTypes = {
-	  router: _react.PropTypes.object
+	    router: _react.PropTypes.object
 	};
 	exports.default = Header;
 
@@ -32711,7 +32731,9 @@
 	        this.renderError(newPost),
 	        _react2.default.createElement(
 	          'form',
-	          { onSubmit: handleSubmit(this.props.createPost.bind(this)) },
+	          { style: {
+	              marginTop: '25px'
+	            }, onSubmit: handleSubmit(this.props.createPost.bind(this)) },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'form-group ' + (title.touched && title.invalid ? 'has-error' : '') },
@@ -32764,146 +32786,13 @@
 	          ),
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'submit', className: 'btn btn-primary', disabled: submitting },
+	            { type: 'submit', className: 'waves-effect waves-light btn blue darken', disabled: submitting },
 	            'Submit'
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/', className: 'btn btn-error' },
+	            { to: '/', className: 'waves-effect waves-light btn red darken' },
 	            'Cancel'
-	          )
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'alert alert-warning' },
-	          'NOTE: The app now has JWT Authentication turned on. ',
-	          _react2.default.createElement(
-	            'b',
-	            null,
-	            'Please *Sign up* using some dummy data to create new posts'
-	          )
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'panel panel-default' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-heading' },
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              'Check out Form Validations!'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-body' },
-	            _react2.default.createElement(
-	              'b',
-	              null,
-	              'Learn how to implement it by going through: ',
-	              _react2.default.createElement(
-	                'a',
-	                { href: 'https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124', target: '_blank' },
-	                'Adding A Robust Form Validation To React Redux Apps'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'ol',
-	              null,
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'h4',
-	                  null,
-	                  'Client Side Validation:'
-	                ),
-	                '1. Click on ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'Title'
-	                ),
-	                ' field and leave it empty.',
-	                _react2.default.createElement('br', null),
-	                '2. Then click on another field(to trigger blur).',
-	                _react2.default.createElement('br', null),
-	                ' ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'Result: "Enter a Title"'
-	                ),
-	                _react2.default.createElement('br', null)
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'h4',
-	                  null,
-	                  '"Instant" Server Side Validation:'
-	                ),
-	                'Calls server w/ field values when a field is blurred (even before submitting the form).',
-	                _react2.default.createElement('br', null),
-	                '1. Create a post',
-	                _react2.default.createElement('br', null),
-	                '2. Try to create another w/ the same ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'Title'
-	                ),
-	                _react2.default.createElement('br', null),
-	                '3. Then click on Categories field (to trigger blur).',
-	                _react2.default.createElement('br', null),
-	                ' ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'Result: You\'ll get error from the server saying "Title is not unique"'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'h4',
-	                  null,
-	                  '"onSubmit" Server Side Validation:'
-	                ),
-	                'This is the common scenario where the server throws some error when user clicks on submit button.',
-	                _react2.default.createElement('br', null),
-	                '1. Enter ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'test'
-	                ),
-	                ' in all the above fields .',
-	                _react2.default.createElement('br', null),
-	                '2. Press the Submit button.',
-	                _react2.default.createElement('br', null),
-	                ' ',
-	                _react2.default.createElement(
-	                  'b',
-	                  null,
-	                  'Result: Errors below every field'
-	                ),
-	                _react2.default.createElement('br', null),
-	                _react2.default.createElement(
-	                  'i',
-	                  null,
-	                  'Note: The server is hardcoded to return this error for demo purposes'
-	                )
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -32977,7 +32866,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
+	        { className: '' },
 	        _react2.default.createElement(_HeaderContainer2.default, { type: 'posts_show', postId: this.props.params.id }),
 	        _react2.default.createElement(_PostDetailsContainer2.default, { id: this.props.params.id })
 	      );
@@ -33396,55 +33285,13 @@
 	          ),
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'submit', className: 'btn btn-primary', disabled: submitting },
+	            { type: 'submit', className: 'waves-effect waves-light btn blue darken', disabled: submitting },
 	            'Submit'
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/', className: 'btn btn-error' },
+	            { to: '/', className: 'waves-effect waves-light btn red darken' },
 	            'Cancel'
-	          )
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'panel panel-default' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-heading' },
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              'Check out Form Validations'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-body' },
-	            _react2.default.createElement(
-	              'b',
-	              null,
-	              'Learn how to implement it by going through: ',
-	              _react2.default.createElement(
-	                'a',
-	                { href: 'https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124', target: '_blank' },
-	                'Adding A Robust Form Validation To React Redux Apps'
-	              )
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'alert alert-warning' },
-	              'NOTE: The app now has JWT Authentication turned on. ',
-	              _react2.default.createElement(
-	                'b',
-	                null,
-	                'Please *Sign up* using some dummy data and *Sign in* to create new posts'
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -33804,43 +33651,13 @@
 	          ),
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'submit', className: 'btn btn-primary', disabled: submitting },
+	            { type: 'submit', className: 'waves-effect waves-light btn blue darken', disabled: submitting },
 	            'Submit'
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/', className: 'btn btn-error' },
+	            { to: '/', className: 'waves-effect waves-light btn red darken' },
 	            'Cancel'
-	          )
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'panel panel-default' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-heading' },
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              'Check out Form Validations!'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'panel-body' },
-	            _react2.default.createElement(
-	              'b',
-	              null,
-	              'Learn how to implement it by going through: ',
-	              _react2.default.createElement(
-	                'a',
-	                { href: 'https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124', target: '_blank' },
-	                'Adding A Robust Form Validation To React Redux Apps'
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -34533,7 +34350,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'button',
-	          { type: 'submit', className: 'btn btn-primary', disabled: submitting },
+	          { type: 'submit', className: 'waves-effect waves-light btn blue darken', disabled: submitting },
 	          'Update Email'
 	        )
 	      );
