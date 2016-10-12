@@ -10,7 +10,7 @@ class PostsList extends Component {
      return categories.map((c) => {
         c = c.trim();
         return (
-          <Link to={"filter/" + c} key={c} className="list-group-item-text">{" " + c + " "}</Link>
+          <Link style={{color:'black', textDecoration: 'none'}} to={"filter/" + c} key={c} className="list-group-item-text">{" " + c + " "}</Link>
         );
      });
   }
@@ -19,10 +19,12 @@ class PostsList extends Component {
     return posts.map((post) => {
       return (
         <li className="list-group-item" key={post._id}>
-          <Link style={{color:'black'}} to={"posts/" + post._id}>
+          <Link style={{color:'black', textDecoration: 'none'}} to={"posts/" + post._id}>
             <h3 className="list-group-item-heading">{post.title}</h3>
           </Link>
-            {this.renderCategories(post.categories)}
+          <div className="chip">  
+	   {this.renderCategories(post.categories)}
+	  </div>
           <p className="text-limited">{post.content}</p>
         </li>
       );

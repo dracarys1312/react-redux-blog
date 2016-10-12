@@ -29,14 +29,14 @@ class Header extends Component {
                     <li style={{
                         paddingRight: '10px'
                     }} role="presentation">
-                        <Link role="presentation" to="/profile">
+                        <Link style={{ textDecoration: 'none' }} role="presentation" to="/profile">
                             {authenticatedUser.name}
                         </Link>
                     </li>
                     <li style={{
                         paddingRight: '10px'
                     }} role="presentation">
-                        <a onClick={this.props.logout} href="javascript:void(0)">
+                        <a style={{ textDecoration: 'none' }} onClick={this.props.logout} href="javascript:void(0)">
                             Log out
                         </a>
                     </li>
@@ -49,14 +49,14 @@ class Header extends Component {
                 <li style={{
                     paddingRight: '10px'
                 }} role="presentation">
-                    <Link role="presentation" to="/signup">
+                    <Link style={{ textDecoration: 'none' }} role="presentation" to="/signup">
                         Sign up
                     </Link>
                 </li>
                 <li style={{
                     paddingRight: '10px'
                 }} role="presentation">
-                    <Link to="/signin">
+                    <Link style={{ textDecoration: 'none' }} to="/signin">
                         Sign in
                     </Link>
                 </li>
@@ -73,7 +73,7 @@ class Header extends Component {
                         <li style={{
                             paddingRight: '10px'
                         }} role="presentation">
-                            <Link to="/posts/new">
+                            <Link style={{ textDecoration: 'none' }} to="/posts/new">
                                 New Post
                             </Link>
                         </li>
@@ -90,7 +90,7 @@ class Header extends Component {
                         <li style={{
                             paddingRight: '10px'
                         }} role="presentation">
-                            <Link className="text-xs-right" to="/">Back To Index</Link>
+                            <Link style={{ textDecoration: 'none' }} className="text-xs-right" to="/">Back To Index</Link>
                         </li>
                     </ul>
                 </div>
@@ -99,9 +99,7 @@ class Header extends Component {
             return (
                 <div className="container">
                     <ul className="nav-pills navbar-left">
-                        <li style={{
-                            paddingLeft: '50px'
-                        }} role="presentation">
+                        <li role="presentation">
                             <Link to="/">Back To Index</Link>
                         </li>
                     </ul>
@@ -122,7 +120,7 @@ class Header extends Component {
     render() {
         return (
             <nav className="navbar nav-wrapper navbar-static-top">
-                <a href="#!" className="brand-logo">Happy Today</a>
+                <a href="#!" style={{ textDecoration: 'none' }} className="brand-logo">Happy Today</a>
                 <a href="#" data-activates="mobile-demo" className="button-collapse">
                     <i className="material-icons">menu</i>
                 </a>

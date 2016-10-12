@@ -28968,7 +28968,7 @@
 	                            }, role: 'presentation' },
 	                        _react2.default.createElement(
 	                            _reactRouter.Link,
-	                            { role: 'presentation', to: '/profile' },
+	                            { style: { textDecoration: 'none' }, role: 'presentation', to: '/profile' },
 	                            authenticatedUser.name
 	                        )
 	                    ),
@@ -28979,7 +28979,7 @@
 	                            }, role: 'presentation' },
 	                        _react2.default.createElement(
 	                            'a',
-	                            { onClick: this.props.logout, href: 'javascript:void(0)' },
+	                            { style: { textDecoration: 'none' }, onClick: this.props.logout, href: 'javascript:void(0)' },
 	                            'Log out'
 	                        )
 	                    )
@@ -28996,7 +28996,7 @@
 	                        }, role: 'presentation' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { role: 'presentation', to: '/signup' },
+	                        { style: { textDecoration: 'none' }, role: 'presentation', to: '/signup' },
 	                        'Sign up'
 	                    )
 	                ),
@@ -29007,7 +29007,7 @@
 	                        }, role: 'presentation' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/signin' },
+	                        { style: { textDecoration: 'none' }, to: '/signin' },
 	                        'Sign in'
 	                    )
 	                )
@@ -29036,7 +29036,7 @@
 	                                }, role: 'presentation' },
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: '/posts/new' },
+	                                { style: { textDecoration: 'none' }, to: '/posts/new' },
 	                                'New Post'
 	                            )
 	                        )
@@ -29058,7 +29058,7 @@
 	                                }, role: 'presentation' },
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { className: 'text-xs-right', to: '/' },
+	                                { style: { textDecoration: 'none' }, className: 'text-xs-right', to: '/' },
 	                                'Back To Index'
 	                            )
 	                        )
@@ -29073,9 +29073,7 @@
 	                        { className: 'nav-pills navbar-left' },
 	                        _react2.default.createElement(
 	                            'li',
-	                            { style: {
-	                                    paddingLeft: '50px'
-	                                }, role: 'presentation' },
+	                            { role: 'presentation' },
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
 	                                { to: '/' },
@@ -29108,7 +29106,7 @@
 	                { className: 'navbar nav-wrapper navbar-static-top' },
 	                _react2.default.createElement(
 	                    'a',
-	                    { href: '#!', className: 'brand-logo' },
+	                    { href: '#!', style: { textDecoration: 'none' }, className: 'brand-logo' },
 	                    'Happy Today'
 	                ),
 	                _react2.default.createElement(
@@ -32395,7 +32393,7 @@
 	        c = c.trim();
 	        return _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: "filter/" + c, key: c, className: 'list-group-item-text' },
+	          { style: { color: 'black', textDecoration: 'none' }, to: "filter/" + c, key: c, className: 'list-group-item-text' },
 	          " " + c + " "
 	        );
 	      });
@@ -32411,14 +32409,23 @@
 	          { className: 'list-group-item', key: post._id },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { style: { color: 'black' }, to: "posts/" + post._id },
+	            { style: { color: 'black', textDecoration: 'none' }, to: "posts/" + post._id },
 	            _react2.default.createElement(
 	              'h3',
 	              { className: 'list-group-item-heading' },
 	              post.title
 	            )
 	          ),
-	          _this2.renderCategories(post.categories)
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'chip' },
+	            _this2.renderCategories(post.categories)
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'text-limited' },
+	            post.content
+	          )
 	        );
 	      });
 	    }
@@ -32733,55 +32740,82 @@
 	          'form',
 	          { style: {
 	              marginTop: '25px'
-	            }, onSubmit: handleSubmit(this.props.createPost.bind(this)) },
+	            }, className: 'col s8', onSubmit: handleSubmit(this.props.createPost.bind(this)) },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (title.touched && title.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Title*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'text', className: 'form-control' }, title)),
+	            { className: 'row ' + (title.touched && title.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              title.touched ? title.error : ''
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'help-block' },
-	              asyncValidating === 'title' ? 'validating..' : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'mode_edit'
+	              ),
+	              _react2.default.createElement('input', _extends({ type: 'text', id: 'title', className: 'validate' }, title)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'title', className: 'control-label' },
+	                'Title*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                title.touched ? title.error : ''
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                asyncValidating === 'title' ? 'validating..' : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (categories.touched && categories.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Categories*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'text', className: 'form-control' }, categories)),
+	            { className: 'row ' + (categories.touched && categories.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              categories.touched ? categories.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'label'
+	              ),
+	              _react2.default.createElement('input', _extends({ type: 'text', id: 'categories', className: 'validate' }, categories)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'categories', className: 'control-label' },
+	                'Categories*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                categories.touched ? categories.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (content.touched && content.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Content*'
-	            ),
-	            _react2.default.createElement('textarea', _extends({ className: 'form-control' }, content)),
+	            { className: 'row ' + (content.touched && content.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              content.touched ? content.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'short_text'
+	              ),
+	              _react2.default.createElement('textarea', _extends({ id: 'textarea1', className: 'materialize-textarea' }, content)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'textarea1', className: 'control-label' },
+	                'Content*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                content.touched ? content.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -33002,14 +33036,15 @@
 	          post.title
 	        ),
 	        _react2.default.createElement(
-	          'h6',
-	          null,
-	          'Categories: ',
+	          'div',
+	          { className: 'chip' },
 	          post.categories
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          null,
+	          { style: {
+	              marginTop: '25px'
+	            } },
 	          post.content
 	        )
 	      );
