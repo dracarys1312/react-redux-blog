@@ -34,7 +34,7 @@ class PostsForm extends Component {
     const {asyncValidating, fields: { title, categories, content }, handleSubmit, submitting, newPost } = this.props;
 
     return (
-      <div className="row">
+      <div className="container">
       {this.renderError(newPost)}
       <form style={{
           marginTop: '25px'
@@ -63,10 +63,12 @@ class PostsForm extends Component {
         </div>
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
-             <textarea id="content" className="validatev materialize-textarea" {...content} />
-             <label for="content" className="input-field col s12">Content*</label>
-             <div className="help-block">
-               {content.touched ? content.error : ''}
+             <div className="input-field col s12">
+                 <textarea id="content" className="validatev materialize-textarea" {...content} />
+                 <label for="content" className="input-field col s12">Content*</label>
+                 <div className="help-block">
+                   {content.touched ? content.error : ''}
+                 </div>
              </div>
         </div>
 
