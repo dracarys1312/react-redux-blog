@@ -34,33 +34,35 @@ class PostsForm extends Component {
     const {asyncValidating, fields: { title, categories, content }, handleSubmit, submitting, newPost } = this.props;
 
     return (
-      <div className="container">
+      <div className="row">
       {this.renderError(newPost)}
       <form style={{
           marginTop: '25px'
-      }} onSubmit={handleSubmit(this.props.createPost.bind(this))}>
-        <div className={`form-group ${title.touched && title.invalid ? 'has-error' : ''}`}>
-          <label className="control-label">Title*</label>
-          <input type="text" className="form-control" {...title} />
-          <div className="help-block">
-            {title.touched ? title.error : ''}
-          </div>
-          <div className="help-block">
-            {asyncValidating === 'title'? 'validating..': ''}
+      }} className="col s12" onSubmit={handleSubmit(this.props.createPost.bind(this))}>
+        <div className={`row ${title.touched && title.invalid ? 'has-error' : ''}`}>
+          <div className="input-field col s12">
+              <input type="text" id="title" className="validate" {...title} />
+              <label for="title" className="control-label">Title*</label>
+              <div className="help-block">
+                {title.touched ? title.error : ''}
+              </div>
+              <div className="help-block">
+                {asyncValidating === 'title'? 'validating..': ''}
+              </div>
           </div>
         </div>
 
-        <div className={`form-group ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
-          <label className="control-label">Categories*</label>
-          <input type="text" className="form-control" {...categories} />
+        <div className={`row ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
+          <input type="text" id="categories" className="validate" {...categories} />
+          <label for="categories" className="input-field col s12">Categories*</label>
           <div className="help-block">
             {categories.touched ? categories.error : ''}
           </div>
         </div>
 
-        <div className={`form-group ${content.touched && content.invalid ? 'has-error' : ''}`}>
-          <label className="control-label">Content*</label>
-          <textarea className="form-control" {...content} />
+        <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
+          <textarea id="content" className="validate" {...content} />
+          <label for="content" className="input-field col s12">Content*</label>
           <div className="help-block">
             {content.touched ? content.error : ''}
           </div>

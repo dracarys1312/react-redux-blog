@@ -4,13 +4,40 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
     <div id="body"></div>
+    <style media="screen">
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        form a {
+            margin-left: 5px;
+        }
+
+        a {
+            text-decoration: 0 none;
+        }
+
+        .text-limited {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 16px;
+            /* fallback */
+            max-height: 32px;
+            /* fallback */
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+    </style>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
