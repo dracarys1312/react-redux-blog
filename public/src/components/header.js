@@ -84,7 +84,7 @@ class Header extends Component {
             );
         } else if (type === 'posts_new') {
             return (
-                <div className="container">
+                <div>
                     {this.renderSignInLinks(authenticatedUser)}
                     <ul className="nav-pills navbar-left">
                         <li style={{
@@ -97,7 +97,7 @@ class Header extends Component {
             );
         } else if (type === 'posts_show') {
             return (
-                <div className="container">
+                <div>
                     <ul className="nav-pills navbar-left">
                         <li style={{
                             paddingRight: '10px'
