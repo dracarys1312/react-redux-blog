@@ -23,6 +23,7 @@ class PostsList extends Component {
             <h3 className="list-group-item-heading">{post.title}</h3>
           </Link>
             {this.renderCategories(post.categories)}
+          <p className="text-limited">{post.content}</p>
         </li>
       );
     });
@@ -32,7 +33,7 @@ class PostsList extends Component {
     const { posts, loading, error } = this.props.postsList;
 
     if(loading) {
-      return <div className="container"><h1>Posts</h1><h3>Loading...</h3></div>      
+      return <div className="container"><h1>Posts</h1><h3>Loading...</h3></div>
     } else if(error) {
       return <div className="alert alert-danger">Error: {error.message}</div>
     }
