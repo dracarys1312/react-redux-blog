@@ -55,7 +55,7 @@ class PostsForm extends Component {
 
         <div className={`row ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
           <div className="input-field col s12">
-              <i className="material-icons prefix">mode_edit</i>
+              <i className="material-icons prefix">label</i>
               <input type="text" id="categories" className="validate" {...categories} />
               <label for="categories" className="control-label">Categories*</label>
                   <div className="help-block">
@@ -66,7 +66,7 @@ class PostsForm extends Component {
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
              <div className="input-field col s12">
-                 <i className="material-icons prefix">mode_edit</i>
+                 <i className="material-icons prefix">short_text</i>
                  <textarea id="textarea1" className="materialize-textarea" {...content} />
                  <label for="textarea1" className="control-label">Content*</label>
                  <div className="help-block">
