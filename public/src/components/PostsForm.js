@@ -53,19 +53,23 @@ class PostsForm extends Component {
         </div>
 
         <div className={`row ${categories.touched && categories.invalid ? 'has-error' : ''}`}>
-          <input type="text" id="categories" className="validate" {...categories} />
-          <label for="categories" className="input-field col s12">Categories*</label>
-          <div className="help-block">
-            {categories.touched ? categories.error : ''}
+          <div className="input-field col s12">
+              <input type="text" id="categories" className="validate" {...categories} />
+              <label for="categories" className="input-field col s12">Categories*</label>
+              <div className="help-block">
+                {categories.touched ? categories.error : ''}
+              </div>
           </div>
         </div>
 
         <div className={`row ${content.touched && content.invalid ? 'has-error' : ''}`}>
-          <textarea id="content" className="validate" {...content} />
-          <label for="content" className="input-field col s12">Content*</label>
-          <div className="help-block">
-            {content.touched ? content.error : ''}
-          </div>
+         <div className="input-field col s12">
+              <textarea id="content" className="validate" {...content} />
+             <label for="content" className="input-field col s12">Content*</label>
+             <div className="help-block">
+               {content.touched ? content.error : ''}
+             </div>
+         </div>
         </div>
 
         <button type="submit" className="waves-effect waves-light btn blue darken"  disabled={submitting} >Submit</button>
