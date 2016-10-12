@@ -22,10 +22,12 @@ class PostsList extends Component {
           <Link style={{color:'black', textDecoration: 'none'}} to={"posts/" + post._id}>
             <h3 className="list-group-item-heading">{post.title}</h3>
           </Link>
-          <div className="chip">  
-	   {this.renderCategories(post.categories)}
-	  </div>
-          <p className="text-limited">{post.content}</p>
+          <div className="chip">
+             {this.renderCategories(post.categories)}
+	      </div>
+          <Link style={{color:'black', textDecoration: 'none'}} to={"posts/" + post._id}>
+              <p className="text-limited">{post.content}</p>
+          </Link>
         </li>
       );
     });
