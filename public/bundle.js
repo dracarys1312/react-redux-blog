@@ -33282,40 +33282,58 @@
 	        { className: 'container' },
 	        _react2.default.createElement(
 	          'form',
-	          { onSubmit: handleSubmit(this.props.signInUser.bind(this)) },
+	          { style: { marginTop: '25px' }, className: 'col s8', onSubmit: handleSubmit(this.props.signInUser.bind(this)) },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (username.touched && username.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              '@username*'
-	            ),
-	            _react2.default.createElement('input', _extends({ placeholder: '@raja', type: 'text', className: 'form-control' }, username)),
+	            { className: 'row ' + (username.touched && username.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              username.touched ? username.error : ''
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'help-block' },
-	              asyncValidating === 'username' ? 'validating..' : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'person'
+	              ),
+	              _react2.default.createElement('input', _extends({ placeholder: '@Pt', type: 'text', id: 'username', className: 'validate' }, username)),
+	              _react2.default.createElement(
+	                'label',
+	                { className: 'control-label', 'for': 'username' },
+	                '@username*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                username.touched ? username.error : ''
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                asyncValidating === 'username' ? 'validating..' : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (password.touched && password.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Password*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'password', className: 'form-control' }, password)),
+	            { className: 'row ' + (password.touched && password.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              password.touched ? password.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'lock'
+	              ),
+	              _react2.default.createElement('input', _extends({ type: 'password', id: 'password', className: 'validate' }, password)),
+	              _react2.default.createElement(
+	                'label',
+	                { className: 'control-label', 'for': 'password' },
+	                'Password*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                password.touched ? password.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -33598,90 +33616,137 @@
 	        { className: 'container' },
 	        _react2.default.createElement(
 	          'form',
-	          { onSubmit: handleSubmit(this.props.signUpUser.bind(this)) },
+	          { style: {
+	              marginTop: '25px'
+	            }, className: 'col s8', onSubmit: handleSubmit(this.props.signUpUser.bind(this)) },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (name.touched && name.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Full Name*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'text', className: 'form-control' }, name)),
+	            { className: 'row ' + (name.touched && name.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              name.touched ? name.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'person'
+	              ),
+	              _react2.default.createElement('input', _extends({ id: 'name', type: 'text', className: 'validate' }, name)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'name', className: 'control-label' },
+	                'Full Name*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                name.touched ? name.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (username.touched && username.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              '@username*'
-	            ),
-	            _react2.default.createElement('input', _extends({ placeholder: '@raja', type: 'text', className: 'form-control' }, username)),
+	            { className: 'row ' + (username.touched && username.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              username.touched ? username.error : ''
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'help-block' },
-	              asyncValidating === 'username' ? 'validating..' : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'portrait'
+	              ),
+	              _react2.default.createElement('input', _extends({ id: 'username', placeholder: '@raja', type: 'text', className: 'validate' }, username)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'username', className: 'control-label' },
+	                '@username*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                username.touched ? username.error : ''
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                asyncValidating === 'username' ? 'validating..' : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (email.touched && email.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Email*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'email', className: 'form-control' }, email)),
+	            { className: 'row ' + (email.touched && email.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              email.touched ? email.error : ''
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'help-block' },
-	              asyncValidating === 'email' ? 'validating..' : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'email'
+	              ),
+	              _react2.default.createElement('input', _extends({ id: 'email', type: 'email', className: 'validate' }, email)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'email', className: 'control-label' },
+	                'Email*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                email.touched ? email.error : ''
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                asyncValidating === 'email' ? 'validating..' : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (password.touched && password.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Password*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'password', className: 'form-control' }, password)),
+	            { className: 'row ' + (password.touched && password.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              password.touched ? password.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'lock'
+	              ),
+	              _react2.default.createElement('input', _extends({ id: 'password', type: 'password', className: 'validate' }, password)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'password', className: 'control-label' },
+	                'Password*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                password.touched ? password.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group ' + (confirmPassword.touched && confirmPassword.invalid ? 'has-error' : '') },
-	            _react2.default.createElement(
-	              'label',
-	              { className: 'control-label' },
-	              'Confirm Password*'
-	            ),
-	            _react2.default.createElement('input', _extends({ type: 'password', className: 'form-control' }, confirmPassword)),
+	            { className: 'row ' + (confirmPassword.touched && confirmPassword.invalid ? 'has-error' : '') },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'help-block' },
-	              confirmPassword.touched ? confirmPassword.error : ''
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'lock'
+	              ),
+	              _react2.default.createElement('input', _extends({ id: 'retypepass', type: 'password', className: 'validate' }, confirmPassword)),
+	              _react2.default.createElement(
+	                'label',
+	                { 'for': 'retypepass', className: 'control-label' },
+	                'Confirm Password*'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'help-block' },
+	                confirmPassword.touched ? confirmPassword.error : ''
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -34138,12 +34203,12 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'well' },
+	            { className: '' },
 	            _react2.default.createElement(_ProfileCardContainer2.default, null)
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'well' },
+	            { className: '' },
 	            _react2.default.createElement(_UpdateEmailFormContainer2.default, null)
 	          )
 	        )
@@ -34499,7 +34564,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -34517,61 +34582,110 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ProfileCard = function (_Component) {
-	  _inherits(ProfileCard, _Component);
+	    _inherits(ProfileCard, _Component);
 
-	  function ProfileCard() {
-	    _classCallCheck(this, ProfileCard);
+	    function ProfileCard() {
+	        _classCallCheck(this, ProfileCard);
 
-	    return _possibleConstructorReturn(this, (ProfileCard.__proto__ || Object.getPrototypeOf(ProfileCard)).apply(this, arguments));
-	  }
-
-	  _createClass(ProfileCard, [{
-	    key: 'render',
-	    value: function render() {
-	      var user = this.props.user.user;
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Name:'
-	          ),
-	          ' ',
-	          user && user.name
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Username:'
-	          ),
-	          ' ',
-	          user && user.username
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Email:'
-	          ),
-	          ' ',
-	          user && user.email
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement('br', null)
-	      );
+	        return _possibleConstructorReturn(this, (ProfileCard.__proto__ || Object.getPrototypeOf(ProfileCard)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return ProfileCard;
+	    _createClass(ProfileCard, [{
+	        key: 'render',
+	        value: function render() {
+	            var user = this.props.user.user;
+	            return _react2.default.createElement(
+	                'ul',
+	                { className: 'collection' },
+	                _react2.default.createElement(
+	                    'li',
+	                    { className: 'collection-item avatar' },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'material-icons circle prefix' },
+	                        'person'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'title' },
+	                        ' Name:'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        user && user.name
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#!', className: 'secondary-content' },
+	                        _react2.default.createElement(
+	                            'i',
+	                            { className: 'material-icons' },
+	                            'grade'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    { className: 'collection-item avatar' },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'material-icons circle prefix' },
+	                        'portrait'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'title' },
+	                        ' Username:'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        user && user.username
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#!', className: 'secondary-content' },
+	                        _react2.default.createElement(
+	                            'i',
+	                            { className: 'material-icons' },
+	                            'grade'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    { className: 'collection-item avatar' },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'material-icons circle prefix' },
+	                        'email'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'title' },
+	                        ' Email:'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        user && user.email
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#!', className: 'secondary-content' },
+	                        _react2.default.createElement(
+	                            'i',
+	                            { className: 'material-icons' },
+	                            'grade'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ProfileCard;
 	}(_react.Component);
 
 	exports.default = ProfileCard;
